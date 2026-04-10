@@ -272,17 +272,18 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 .hero-img {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse 80% 60% at 30% 40%, rgba(180, 145, 90, 0.12), transparent 70%),
-        repeating-linear-gradient(91deg, transparent 0, transparent 7px, rgba(0,0,0,0.18) 7px, rgba(0,0,0,0.18) 8px),
-        repeating-linear-gradient(89deg, transparent 0, transparent 14px, rgba(255,255,255,0.025) 14px, rgba(255,255,255,0.025) 15px),
-        linear-gradient(165deg, #3d2a18 0%, #1c1207 50%, #0a0603 100%);
+    background-image: url('images/hero-wood.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.02);
 }
 .hero-overlay {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.65) 100%);
+        linear-gradient(180deg, rgba(15, 9, 5, 0.55) 0%, rgba(15, 9, 5, 0.4) 40%, rgba(15, 9, 5, 0.78) 100%),
+        linear-gradient(90deg, rgba(15, 9, 5, 0.45) 0%, rgba(15, 9, 5, 0.05) 60%, rgba(15, 9, 5, 0.15) 100%);
 }
 .hero-content {
     position: relative;
@@ -413,11 +414,18 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 }
 .about-photo {
     aspect-ratio: 4 / 5;
-    background:
-        linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%),
-        repeating-linear-gradient(87deg, transparent 0, transparent 9px, rgba(20,12,5,0.25) 9px, rgba(20,12,5,0.25) 11px),
-        repeating-linear-gradient(87deg, transparent 0, transparent 26px, rgba(255,240,210,0.07) 26px, rgba(255,240,210,0.07) 28px),
-        linear-gradient(155deg, #6b4f30 0%, #3a2614 60%, #1f1308 100%);
+    background-image: url('images/wood-rings.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.about-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.25) 100%);
+    pointer-events: none;
 }
 .about-text {
     padding-top: 40px;
@@ -473,6 +481,24 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
     padding: var(--gap-section) 0;
     background: var(--c-bg-paper);
     position: relative;
+}
+.products-feature {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    margin: 0 auto 130px;
+    max-width: var(--max-w);
+    background-image: url('images/wood-samples.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.products-feature::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.15) 100%);
+    pointer-events: none;
 }
 .products-list {
     display: flex;
@@ -1020,6 +1046,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
         gap: 60px;
     }
     .about-photo {
+        width: 100%;
         max-width: 480px;
         margin: 0 auto;
     }
@@ -1039,6 +1066,10 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
     }
     .products-list {
         gap: 100px;
+    }
+    .products-feature {
+        margin-bottom: 90px;
+        aspect-ratio: 16 / 8;
     }
 
     .craft-grid {
@@ -1142,6 +1173,10 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 
     .products-list {
         gap: 80px;
+    }
+    .products-feature {
+        margin-bottom: 70px;
+        aspect-ratio: 16 / 10;
     }
     .product-jp {
         font-size: 26px;
